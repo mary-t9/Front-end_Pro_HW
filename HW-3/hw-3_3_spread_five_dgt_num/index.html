@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HW 4</title>
+    <script>
+        //добавление пробела после каждой цифры в числе
+        //первый способ
+        const num = 12345;
+        const num1 = Math.floor(num/10000);
+        const num2 = Math.floor(num/1000) % 10;
+        const num3 = Math.floor(num/100) % 10;
+        const num4 = Math.floor(num/10) % 10;
+        const num5 = num % 10;
+        console.log(`${num1} ${num2} ${num3} ${num4} ${num5}`);
+        //второй способ
+        const dgt = 54321;
+        const dgtStr= dgt.toString();
+        const dgtStrSpc = dgtStr.split('').join(' ');
+        console.log(dgtStrSpc);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

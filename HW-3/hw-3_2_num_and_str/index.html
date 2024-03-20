@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HW 3</title>
+    <script>
+        //вывод в рандомном порядке 3х строк, принятых от пользователя
+        const str1 = prompt('Enter your first string');
+        const str2 = prompt('Enter your second string');
+        const str3 = prompt('Enter your third string');
+        const allStr = [str1, str2, str3].sort(() => Math.random() - 0.5);
+        console.log(`Strings in random order: ${allStr.join(' ')}`);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
