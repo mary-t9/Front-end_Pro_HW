@@ -7,17 +7,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HW4</title>
     <script>
-        let numOrStr = prompt('Enter number or string please');
+        let numOrStr = prompt('Enter a number or string please: ');
+        console.log(numOrStr);
 
-        switch (typeof numOrStr) {
-            case 'number':
-                console.log('You entered the number:', numOrStr);
+        switch (true) {
+            case (numOrStr === null):
+                console.log('You have canceled your entry');
                 break;
-            case 'string':
-                console.log('You entered the string:', numOrStr);
+            case (numOrStr.trim() === ''):
+                console.log('Empty line');
+                break;
+            case (isNaN(+numOrStr)):
+                console.log('Not a number entered');
                 break;
             default:
-                console.log('You entered a value of a different type:', numOrStr);
+                console.log('OK!');
         }
     </script>
 </head>
