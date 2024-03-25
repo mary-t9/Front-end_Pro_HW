@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HW4</title>
+    <script>
+        let userBirth = prompt("Enter your year of birth: ");
+        if (userBirth === null) {
+            alert("It is a pity that you did not want to enter your year of birth...");
+        }
+        else {
+            let userCity = prompt("Enter the city where you live: ");
+            if (userCity === null) {
+                alert("It is a pity that you did not want to enter your city...");
+            } else {
+                let userFaveSport = prompt("Enter your favorite sport: ");
+                if (userFaveSport === null) {
+                    alert("It is a pity that you did not want to enter your favorite sport...");
+                } else {
+                    let crntYear = new Date().getFullYear();
+                    let userAge = crntYear - userBirth;
+                    let message = `Your age: ${userAge} years`;
+                    if (userCity === "Kyiv" || userCity === "Washington" || userCity === "London") {
+                        message += `\nYou live in the capital of ${getCountry(userCity)}.`;
+
+                    } else {
+                        message += `\nYou live in the city of ${userCity}.`;
+                    }
+                    if (userFaveSport === "football" || userFaveSport === "basketball" || userFaveSport === "tennis") {
+                        message += `\nAwesome! Do you want to become ${getChampion(userFaveSport)}?`;
+                    }
+                    alert(message);
+                }
+            }
+        }
+
+        function getCountry(capital) {
+            switch (capital) {
+                case "Kyiv":
+                    return "Ukraine";
+                case "Washington":
+                    return "USA";
+                case "London":
+                    return "United Kingdom";
+                default:
+                    return "";
+            }
+        }
+
+        function getChampion(sport) {
+            switch (sport) {
+                case "football":
+                    return "Lionel Messi";
+                case "basketball":
+                    return "George Mikan";
+                case "tennis":
+                    return "Andre Agassi";
+                default:
+                    return "";
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
