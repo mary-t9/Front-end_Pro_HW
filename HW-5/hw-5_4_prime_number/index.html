@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HW5</title>
+    <script>
+        let input;
+        do {
+            input = prompt('Enter your number please: ');
+        } while (isNaN(input));
+
+        let userNum = +input;
+        let primeNum = true;
+
+        if (userNum <= 1) {
+            primeNum = false;
+        } else {
+            for (let i = 2; i <= userNum / 2; i++) {
+                if (userNum % i === 0) {
+                    primeNum = false;
+                    break;
+                }
+            }
+        }
+        if (primeNum) {
+            console.log(`${userNum} is a prime number!`)
+        } else {
+            console.log(`${userNum} is not a prime number!`)
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

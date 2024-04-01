@@ -5,10 +5,16 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HW4</title>
+    <title>HW5</title>
     <script>
-        let userName = prompt("Enter your name please:");
-        alert(`Hey, ${userName}! How are you today?`);
+        let strHalfStep = ``;
+        for (let i = 20; i <= 30; i += 0.5) {
+            strHalfStep += i;
+            if (i < 30) {
+                strHalfStep += `, `;
+            }
+        }
+        console.log(strHalfStep);
     </script>
 </head>
 <body>

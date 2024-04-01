@@ -5,10 +5,17 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HW4</title>
+    <title>HW5</title>
     <script>
-        let userName = prompt("Enter your name please:");
-        alert(`Hey, ${userName}! How are you today?`);
+        let dollar = 26;
+        let converter = ``;
+        for (let i = 10; i <= 100; i += 10) {
+            converter += i * dollar;
+            if (i < 100) {
+                converter += `, `;
+            }
+        }
+        console.log(converter);
     </script>
 </head>
 <body>
