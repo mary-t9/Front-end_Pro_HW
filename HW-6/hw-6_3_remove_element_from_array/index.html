@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HW6</title>
+    <script>
+        function removeElement(array, item) {
+            return array.filter(element => element !== item);
+        }
+
+        let currentArray = [8, 8, 8, 7, 8, 7, 7, 8];
+        let itemRemove = 7;
+        let arrayWithoutItem = removeElement(currentArray, itemRemove);
+        console.log(`Array without item: ${arrayWithoutItem}`);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
