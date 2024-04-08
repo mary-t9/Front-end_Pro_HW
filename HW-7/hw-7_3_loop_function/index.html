@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HW7</title>
+    <script>
+       /* function getNumInputLoop() {
+            for (let i = 1; i <= 10; i++) {
+                let userInput = prompt(`Enter a number greater than 100 (iteration ${i}):`);
+
+                if (userInput === null) {
+                    console.log("You have canceled your input.");
+                    return;
+                }
+
+                let num = Number(userInput);
+
+                if (isNaN(num) || num <= 100) {
+                    console.log("Incorrect input. Please enter a number greater than 100.");
+                } else {
+                    console.log(`You entered a number greater than 100: ${num}`);
+                    return;
+                }
+            }
+
+            console.log("You have exhausted all 10 attempts. Last user input:");
+
+            let lastNum = Number(userInput);
+            if (isNaN(lastNum)) {
+                console.log("The last entry is not a valid number.");
+            } else {
+                console.log(lastNum);
+            }
+        }
+
+        getNumInputLoop();*/
+       function getNumInputLoop() {
+           let validInputFound = false;
+           let lastValidNumber = NaN;
+
+           for (let i = 1; i <= 10; i++) {
+               let userInput = prompt(`Enter a number greater than 100 (iteration ${i}):`);
+
+               if (userInput === null) {
+                   console.log("You have canceled your input.");
+                   return;
+               }
+
+               let num = Number(userInput);
+
+               if (!isNaN(num) && num > 100) {
+                   console.log(`You entered a number greater than 100: ${num}`);
+                   validInputFound = true;
+                   lastValidNumber = num;
+                   break; // Виходимо з циклу, якщо знайдено правильне введення
+               } else {
+                   console.log("Incorrect input. Please enter a number greater than 100.");
+               }
+           }
+
+           if (validInputFound) {
+               console.log("Valid input was found within the allowed attempts.");
+           } else {
+               console.log("You have exhausted all 10 attempts. Last valid user input:");
+           }
+
+           if (isNaN(lastValidNumber)) {
+               console.log("No valid input was provided.");
+           } else {
+               console.log(lastValidNumber);
+           }
+       }
+
+       getNumInputLoop();
+    </script>
+</head>
+<body>
+
+</body>
+</html>
