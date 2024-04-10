@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HW8</title>
+    <script>
+        let ladder = {
+            steps: 0,
+            up: function() {
+                this.steps++;
+                return this;
+            },
+            down: function() {
+                if (this.steps > 0) {
+                    this.steps--;
+                }
+                return this;
+            },
+            showStep: function() {
+                console.log(`Current step: ${this.steps}`);
+                return this;
+            }
+        };
+
+        console.log(ladder.up().up().down().showStep()); // ступенька 1
+        console.log(ladder.up().up().down().showStep()); // ступенька 2
+        console.log(ladder.up().up().down().showStep()); // ступенька 3
+        console.log(ladder.up().up().down().showStep()); // ступенька 4
+        console.log(ladder.up().up().down().showStep()); // ступенька 5
+    </script>
+</head>
+<body>
+
+</body>
+</html>
