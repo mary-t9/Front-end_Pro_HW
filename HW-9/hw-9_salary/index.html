@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HW9</title>
+    <script>
+        let company = {
+            sales: [{name: 'John', salary: 10000}, {name: 'Alice', salary: 600}],
+            development: {
+                web: [{name: 'Peter', salary: 2000}, {name: 'Alex', salary: 1800}],
+                internals: [{name: 'Jack', salary: 1300}]
+            }
+        };
+
+        function calcTotalSalary(company) {
+            let totalSalary = 0;
+
+            for (let key in company) {
+                if (Array.isArray(company[key])) {
+                    company[key].forEach(employe => {
+                        totalSalary +=employe.salary;
+                    });
+                } else if (typeof company[key] === 'object' && company[key] !== null) {
+                    totalSalary +=calcTotalSalary(company[key])
+                }
+            }
+
+            return totalSalary;
+        }
+
+        let totalSalary = calcTotalSalary(company);
+        console.log('The sum of all employee salaries in the company: ', totalSalary);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
