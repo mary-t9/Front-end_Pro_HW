@@ -20,8 +20,10 @@
 
             for (let key in company) {
                 if (Array.isArray(company[key])) {
-                    company[key].forEach(employe => {
-                        totalSalary +=employe.salary;
+                    company[key].forEach(employee => {
+                        if (typeof employee.salary === 'number') {
+                            totalSalary += employee.salary;
+                        }
                     });
                 } else if (typeof company[key] === 'object' && company[key] !== null) {
                     totalSalary +=calcTotalSalary(company[key])
