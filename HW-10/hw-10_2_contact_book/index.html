@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HW10</title>
+    <script>
+        let contactBook = {
+            contacts: [
+                {
+                    name: "John",
+                    phone: "123-456-7890",
+                    email: "johnellis@gmail.com"
+                },
+                {
+                    name: "Ana",
+                    phone: "123-843-8567",
+                    email: "anamendes@gmail.com"
+                },
+                {
+                    name: "Olha",
+                    phone: "123-248-4336",
+                    email: "olhavitova@gmail.com"
+                },
+                {
+                    name: "Hanna",
+                    phone: "123-777-3567",
+                    email: "hannafedorashuk@gmail.com"
+                },
+            ],
+
+            /*
+            Без промпта.
+
+            searchContact: function (name) {
+                let foundContacts = this.contacts.filter(contact => contact.name.toLowerCase() === name.toLowerCase());
+                return foundContacts;
+            },
+
+            addContact: function(name, phone, email) {
+                let newContact = {
+                    name: name,
+                    phone: phone,
+                    email: email
+                };
+                this.contacts.push(newContact);
+                return "Contact successfully added!";
+
+                let searchResult = contactBook.searchContact("Ana");
+        console.log("Search result by name:", searchResult);
+
+        console.log(contactBook.addContact("Peter", "111-222-3333", "peter@example.com"));
+
+        console.log("Всі контакти після додавання:", contactBook.contacts);
+            }*/
+
+            searchContact: function() {
+                let searchName = prompt("Enter a name to search for:");
+                if (!searchName) {
+                    return "You didn't enter a name.";
+                }
+
+                let filteredContacts = this.contacts.filter(contact => contact.name.toLowerCase() === searchName.toLowerCase());
+
+                return filteredContacts.length > 0 ? filteredContacts : "No contacts found.";
+            },
+
+            addContact: function() {
+                let name = prompt("Enter the name of the new contact:");
+                let phone = prompt("Enter the phone number of the new contact:");
+                let email = prompt("Enter the email address of the new contact:");
+
+                if (!name || !phone || !email) {
+                    return "Failed to add contact. Please fill in all fields.";
+                }
+
+                let newContact = {
+                    name: name,
+                    phone: phone,
+                    email: email
+                };
+
+                this.contacts.push(newContact);
+                return "Contact successfully added!";
+            }
+        };
+
+        let searchResult = contactBook.searchContact();
+        console.log("Search result by name:", searchResult);
+
+        console.log(contactBook.addContact());
+
+        console.log("All contacts after adding:", contactBook.contacts);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

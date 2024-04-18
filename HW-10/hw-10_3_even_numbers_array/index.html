@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HW10</title>
+    <script>
+        // Метод filter
+
+        let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        let evenNumbers = numbers.filter(num => num % 2 === 0);
+
+        console.log("The original array of numbers:", numbers);
+        console.log("An array with only even numbers:", evenNumbers);
+
+        // Метод reduce
+
+        let numArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        let evenNum = numArray.reduce((accumulator, current) => {
+            if (current % 2 === 0) {
+                accumulator.push(current);
+            }
+            return accumulator;
+        }, []);
+
+        console.log("The original array of numbers:", numArray);
+        console.log("An array with only even numbers:", evenNum);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
