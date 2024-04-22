@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HW11 - Pythagorean table</title>
+
+    <style>
+        h1 {
+            text-align: center;
+            color: #1c3b73;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        td, th {
+            border: 1px solid black;
+            padding: 25px;
+            text-align: center;
+        }
+
+        td:nth-child(even) {
+            background-color: #f0f0f0;
+            color: #696969;
+        }
+
+        td:nth-child(odd) {
+            background-color: #d9edf7;
+            color: #696969;
+        }
+    </style>
+</head>
+<body>
+<h1>Pythagorean table</h1>
+
+<div id="tblContainer"></div>
+
+<script>
+    const tblContainer = document.getElementById('tblContainer');
+    const tblElement = document.createElement('table');
+
+    for (let i = 1; i <= 10; i++) {
+        const tblRow = document.createElement('tr');
+
+        for (let j = 1; j <= 10; j++) {
+            const tblColumn = document.createElement('td');
+            const tblCellValue = i * j;
+            tblColumn.textContent = tblCellValue.toString();
+            tblRow.appendChild(tblColumn);
+        }
+
+        tblElement.appendChild(tblRow);
+    }
+
+    tblContainer.appendChild(tblElement);
+</script>
+</body>
+</html>

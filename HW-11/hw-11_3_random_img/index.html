@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HW11 - Random img</title>
+    <style>
+        #imgRandom {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<h1>Random image</h1>
+<div id="imgContainer">
+    <img id="imgRandom" src="" alt="random image">
+</div>
+<button onclick="loadImgRandom()">Show random image</button>
+
+<script>
+    function loadImgRandom() {
+        const imgContainer = document.getElementById('imgRandom');
+
+        const imgName = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg',];
+
+        const randomImgName = imgName[Math.floor(Math.random() * imgName.length)];
+
+        const imgPath = `img/${randomImgName}`;
+
+        imgContainer.src = imgPath;
+
+        imgRandom.style.display = 'block';
+    }
+</script>
+</body>
+</html>

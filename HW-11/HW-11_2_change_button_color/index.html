@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HW11 - Change button color</title>
+    <style>
+        #txtContainer {
+            color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+<div id="txtContainer">
+    <p>Lorem ipsum dolor sit amet.</p>
+</div>
+<button onclick="changeTxtColor()">Change text color</button>
+
+<script>
+    let txtColorChanged = false;
+
+    function changeTxtColor() {
+        const txtContainer = document.getElementById('txtContainer');
+
+        if (!txtColorChanged) {
+            txtContainer.style.color = 'darkgoldenrod';
+            txtColorChanged = true;
+        } else {
+            txtContainer.style.color = 'cornflowerblue';
+            txtColorChanged = false;
+        }
+    }
+</script>
+</body>
+</html>
