@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HW12 - Link buttons</title>
+</head>
+<body>
+<button id="btnLinkInput">Enter the link</button>
+<button id="btnRedirect">Folllow the link</button>
+
+<script>
+    document.getElementById('btnLinkInput').addEventListener('click', function () {
+        var userLink = prompt('Enter the link please: ');
+        if (userLink) {
+            localStorage.setItem('linkRedirect', userLink);
+            alert('Link saved successfully!');
+        }
+    });
+
+    document.getElementById('btnRedirect').addEventListener('click', function () {
+        var linkSaved = localStorage.getItem('linkRedirect');
+        if (linkSaved) {
+            window.location.href = linkSaved;
+        } else {
+            alert('Enter the link first!');
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HW 12 - event tracking</title>
+    <style>
+        button {
+            color: #f0f0f0;
+            padding: 10px;
+        }
+        #btnReady {
+            background-color: darkred;
+        }
+
+        #btnSteady {
+            background-color: orange;
+        }
+        #btnGo {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+<div id="btnContainer">
+    <button id="btnReady">Ready</button>
+    <button id="btnSteady">Steady</button>
+    <button id="btnGo">GO!</button>
+</div>
+
+<script>
+    var btnContainer = document.getElementById('btnContainer');
+
+    btnContainer.addEventListener('click', function (event) {
+        if (event.target.tagName === 'BUTTON') {
+            var btnName = event.target.textContent;
+
+            alert(`The button was clicked: ${btnName}`)
+        }
+    });
+</script>
+</body>
+</html>
