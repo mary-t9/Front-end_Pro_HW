@@ -23,13 +23,33 @@ document.addEventListener('DOMContentLoaded', () => {
             form.querySelectorAll('.error-message').forEach(errorMessage => errorMessage.remove());
         };
 
-        !nameValue
-            ? displayError('name', 'Please enter your name.')
-            : messageValue.length < 5 ? displayError('message', 'Message must be at least 5 characters long.')
-                : !(/^\+380\d{9}$/.test(phoneNumberValue))
-                    ? displayError('tel', 'Please enter a valid phone number starting with +380.')
-                    : !(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue))
-                        ? displayError('email', 'Please enter a valid email address.')
-                        : (clearErrorMessages(), console.log('Name:', nameValue, '\nMessage:', messageValue, '\nPhone number:', phoneNumberValue, '\nEmail:', emailValue));
+        clearErrorMessages();
+
+        let hasErrors = false;
+
+        if (!nameValue) {
+            displayError('name', 'Please enter your name.');
+            hasErrors = true;
+        }
+
+        if (messageValue.length < 5) {
+            displayError('message', 'Message must be at least 5 characters long.');
+            hasErrors = true;
+        }
+
+        if (!/^\+380\d{9}$/.test(phoneNumberValue)) {
+            displayError('tel', 'Please enter a valid phone number starting with +380.');
+            hasErrors = true;
+        }
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) {
+            displayError('email', 'Please enter a valid email address.');
+            hasErrors = true;
+        }
+
+        if (!hasErrors) {
+            console.log('Name:', nameValue, '\nMessage:', messageValue, '\nPhone number:', phoneNumberValue, '\nEmail:', emailValue);
+            // Здесь можно отправить форму или выполнить другие действия
+        }
     });
 });
