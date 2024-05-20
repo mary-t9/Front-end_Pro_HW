@@ -49,7 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!hasErrors) {
             console.log('Name:', nameValue, '\nMessage:', messageValue, '\nPhone number:', phoneNumberValue, '\nEmail:', emailValue);
-            // Здесь можно отправить форму или выполнить другие действия
         }
     });
 });
